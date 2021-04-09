@@ -1,0 +1,33 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: One Icon for WP\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-09 17:43+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7\n"
+"X-Domain: one-icon-for-wp"
+
+#. Description of the plugin
+msgid "A plugin for icons all over WordPress and WooCommerce"
+msgstr ""
+
+#. Author of the plugin
+msgid "Cross Media Cloud"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.cross-media-cloud.de"
+msgstr ""
+
+#. Name of the plugin
+msgid "One Icon for WP"
+msgstr ""
