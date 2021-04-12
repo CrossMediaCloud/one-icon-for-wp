@@ -6,6 +6,10 @@
 	let createElement = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	let registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() function to register blocks.
 	let ServerSideRender = wp.serverSideRender; // For displaying server rendered elements.
+	let InspectorControls = wp.blockEditor.InspectorControls; // For adding block controls.
+	let ToggleControl     = wp.components.ToggleControl; // For adding toggle controls to block settings panels.
+	let RangeControl      = wp.components.RangeControl;
+	let SelectControl     = wp.components.SelectControl;
 
 	/**
 	 * Register block

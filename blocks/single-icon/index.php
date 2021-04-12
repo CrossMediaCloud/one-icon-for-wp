@@ -93,6 +93,10 @@ function one_icon_for_wp_single_icon_block_init() {
 			'textColor'       => array(
 				'type' => 'string',
 			),
+			'hasTerm'      => array(
+				'type'    => 'string',
+				'default' => '',
+			),
 		),
 	) );
 
