@@ -37,19 +37,26 @@ class ONE_ICON_FOR_WP_ICONS {
 		// Prepare empty array
 		$icon_list = array();
 
-		// Add solid icons
-		$icon = self::get_solid_icons();
-		foreach ( $icon as $name => $label ) {
-			$icon_list[ 'font-awesome/solid/' . $name ] = $label;
-		}
+		// List of styles
+		$icon_styles = array(
+			'solid',
+			'brands',
+		);
 
-		// Add brand icons
-		$brands = self::get_brand_icons();
-		foreach ( $brands as $name => $label ) {
-			$icon_list[] = array(
-				'value' => 'font-awesome/brands/' . $name,
-				'label' => $label,
-			);
+		// Loop styles
+		foreach ( $icon_styles as $style ) {
+
+			// Build getter method name
+			$icon_getter = 'get_' . $style . '_icons';
+
+			// Loop icons
+			foreach ( self::$icon_getter() as $name => $label ) {
+				// Add icon to array
+				$icon_list[] = array(
+					'value' => 'font-awesome/' . $style . '/' . $name,
+					'label' => $label,
+				);
+			}
 		}
 
 		return $icon_list;
@@ -58,7 +65,7 @@ class ONE_ICON_FOR_WP_ICONS {
 	/**
 	 * @return array
 	 */
-	private static function get_brand_icons(): array {
+	private static function get_brands_icons(): array {
 		return array(
 			'500px'                          => __( '500px', 'one-icon-for-wp' ),
 			'accessible-icon'                => __( 'Accessible Icon', 'one-icon-for-wp' ),
