@@ -46,7 +46,10 @@ class ONE_ICON_FOR_WP_ICONS {
 		// Add brand icons
 		$brands = self::get_brand_icons();
 		foreach ( $brands as $name => $label ) {
-			$icon_list[ 'font-awesome/brands/' . $name ] = $label;
+			$icon_list[] = array(
+				'value' => 'font-awesome/brands/' . $name,
+				'label' => $label,
+			);
 		}
 
 		return $icon_list;
