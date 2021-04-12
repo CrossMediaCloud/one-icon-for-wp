@@ -23,8 +23,8 @@ class ONE_ICON_FOR_WP_ICONS {
 	 *
 	 * @return array
 	 */
-	public function add_font_awesome( array $icon_list ): array {
-		return array_merge( $icon_list, $this->get_font_awesome_icon_list() );
+	public static function add_font_awesome( array $icon_list ): array {
+		return array_merge( $icon_list, self::get_font_awesome_icon_list() );
 	}
 
 	/**
@@ -32,19 +32,19 @@ class ONE_ICON_FOR_WP_ICONS {
 	 *
 	 * @return array
 	 */
-	private function get_font_awesome_icon_list(): array {
+	private static function get_font_awesome_icon_list(): array {
 
 		// Prepare empty array
 		$icon_list = array();
 
 		// Add solid icons
-		$icon = $this->get_solid_icons();
+		$icon = self::get_solid_icons();
 		foreach ( $icon as $name => $label ) {
 			$icon_list[ 'font-awesome/solid/' . $name ] = $label;
 		}
 
 		// Add brand icons
-		$brands = $this->get_brand_icons();
+		$brands = self::get_brand_icons();
 		foreach ( $brands as $name => $label ) {
 			$icon_list[ 'font-awesome/brands/' . $name ] = $label;
 		}
@@ -55,7 +55,7 @@ class ONE_ICON_FOR_WP_ICONS {
 	/**
 	 * @return array
 	 */
-	private function get_brand_icons(): array {
+	private static function get_brand_icons(): array {
 		return array(
 			'500px'                          => __( '500px', 'one-icon-for-wp' ),
 			'accessible-icon'                => __( 'Accessible Icon', 'one-icon-for-wp' ),
@@ -450,7 +450,7 @@ class ONE_ICON_FOR_WP_ICONS {
 	/**
 	 * @return array
 	 */
-	private function get_solid_icons(): array {
+	private static function get_solid_icons(): array {
 		return array(
 			'ad'                                  => __( 'Ad', 'one-icon-for-wp' ),
 			'address-book'                        => __( 'Address Book', 'one-icon-for-wp' ),
