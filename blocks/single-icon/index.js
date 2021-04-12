@@ -49,7 +49,7 @@
 				},
 				hasIcon: {
 					'type': 'string',
-					'default': 'solid/font-awesome-flag',
+					'default': 'font-awesome/brands/font-awesome-flag',
 				},
 			},
 
@@ -67,7 +67,7 @@
 					if ( value ) {
 						setAttributes( { hasIcon: value } );
 					} else {
-						setAttributes( { hasIcon: 'solid/font-awesome-flag' } );
+						setAttributes( { hasIcon: 'font-awesome/brands/font-awesome-flag' } );
 					}
 				}
 
