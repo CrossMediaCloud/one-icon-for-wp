@@ -147,7 +147,9 @@ function one_icon_for_wp_single_icon_block_render_callback( array $attributes, s
 	?>
 
 	<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
-		Single Icon
+		<?php
+		echo file_get_contents( $svg_path );
+		?>
 	</div>
 
 	<?php
