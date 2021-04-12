@@ -93,9 +93,9 @@ function one_icon_for_wp_single_icon_block_init() {
 			'textColor'       => array(
 				'type' => 'string',
 			),
-			'hasTerm'      => array(
+			'hasIcon'         => array(
 				'type'    => 'string',
-				'default' => '',
+				'default' => '500px',
 			),
 		),
 	) );

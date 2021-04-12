@@ -46,7 +46,11 @@
 				},
 				textColor: {
 					'type': 'string',
-				}
+				},
+				hasIcon: {
+					'type': 'string',
+					'default': '500px',
+				},
 			},
 
 			// Defines the block within the editor.
@@ -56,9 +60,36 @@
 					align,
 					backgroundColor,
 					textColor,
+					hasIcon
 				} = attributes;
 
+				function onChangeIcon( value ) {
+					if ( value ) {
+						setAttributes( { hasIcon: value } );
+					} else {
+						setAttributes( { hasIcon: '500px' } );
+					}
+				}
+
+				const controls = [
+					createElement(
+						InspectorControls,
+						{},
+						createElement(
+							SelectControl,
+							{
+								label: __( 'Icon' ),
+								onChange: onChangeIcon,
+								value: hasIcon,
+								options: window.one_icon_for_wp_icon_list,
+							}
+						),
+					),
+
+				];
+
 				return [
+					controls,
 					createElement(
 						ServerSideRender,
 						{
