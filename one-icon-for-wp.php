@@ -50,3 +50,14 @@ function one_icon_for_wp_deactivate() {
 
 }
 register_deactivation_hook( __FILE__, 'one_icon_for_wp_deactivate' );
+
+/*
+ * Load helpers
+ */
+require_once 'includes/icons.php';
+
+/*
+ * Load features
+ */
+// Blocks
+require_once 'blocks/blocks.php';
