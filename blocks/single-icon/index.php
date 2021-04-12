@@ -113,6 +113,10 @@ add_action( 'init', 'one_icon_for_wp_single_icon_block_init', 100 );
  */
 function one_icon_for_wp_single_icon_block_render_callback( array $attributes, string $content ): string {
 
+	if ( ! isset( $attributes['hasIcon'] ) ) {
+		return '';
+	}
+
 	// Collect classes
 	$classes = array(
 		'wp-block',
@@ -132,6 +136,11 @@ function one_icon_for_wp_single_icon_block_render_callback( array $attributes, s
 	if ( isset( $attributes['textColor'] ) ) {
 		$classes[] = 'has-text-color';
 		$classes[] = esc_attr( 'has-' . $attributes['textColor'] . '-color' );
+	}
+
+	$svg_path = dirname( dirname( dirname( __FILE__ ) ) ) . '/assets/svg/' . $attributes['hasIcon'] . '.svg';
+	if ( ! file_exists( $svg_path ) ) {
+		return '';
 	}
 
 	ob_start();
