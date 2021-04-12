@@ -95,7 +95,7 @@ function one_icon_for_wp_single_icon_block_init() {
 			),
 			'hasIcon'         => array(
 				'type'    => 'string',
-				'default' => '500px',
+				'default' => 'solid/font-awesome-flag',
 			),
 		),
 	) );
