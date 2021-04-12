@@ -1,3 +1,11 @@
 /**
  * Frontend styles
  */
+
+.one-icon-for-wp-single-icon-block.has-background {
+	padding: 5px 10px;
+}
+
+.one-icon-for-wp-single-icon-block svg {
+	fill: currentColor;
+}
