@@ -55,6 +55,7 @@ register_deactivation_hook( __FILE__, 'one_icon_for_wp_deactivate' );
  * Load helpers
  */
 require_once 'includes/icons.php';
+require_once 'includes/public-helper.php';
 
 /*
  * Load features
