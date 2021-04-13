@@ -14,6 +14,7 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 			return;
 		}
 
+		// Add default taxonomies to list.
 		add_action( 'one_icon_for_wp_taxonomies_with_term_icon', array( __CLASS__, 'add_icons_to_taxonomies' ) );
 
 		// Get taxonomies to add term icons to
@@ -39,6 +40,8 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 	}
 
 	/**
+	 * Add WP and WooCommerce Core Taxonomies to list of term to get term icons.
+	 *
 	 * @param array $taxonomies
 	 *
 	 * @return array
@@ -55,6 +58,8 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 	}
 
 	/**
+	 * Add term icon setting to new term screen.
+	 *
 	 * @param $taxonomy
 	 */
 	public function create_screen_fields( $taxonomy ) {
@@ -80,6 +85,8 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 	<?php }
 
 	/**
+	 * Add term icon setting to term edit screen.
+	 *
 	 * @param $term
 	 * @param $taxonomy
 	 */
@@ -118,6 +125,8 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 	<?php }
 
 	/**
+	 * Save data.
+	 *
 	 * @param $term_id
 	 */
 	public function save_data( $term_id ) {
