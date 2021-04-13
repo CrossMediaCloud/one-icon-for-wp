@@ -138,17 +138,13 @@ function one_icon_for_wp_single_icon_block_render_callback( array $attributes, s
 		$classes[] = esc_attr( 'has-' . $attributes['textColor'] . '-color' );
 	}
 
-	$svg_path = dirname( dirname( dirname( __FILE__ ) ) ) . '/assets/svg/' . $attributes['hasIcon'] . '.svg';
-	if ( ! file_exists( $svg_path ) ) {
-		return '';
-	}
-
 	ob_start();
 	?>
 
 	<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 		<?php
-		echo file_get_contents( $svg_path );
+		// Use helper to output icon markup
+		one_icon_for_wp_display_icon( $attributes['hasIcon'] );
 		?>
 	</div>
 
