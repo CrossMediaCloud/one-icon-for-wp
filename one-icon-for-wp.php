@@ -2,7 +2,7 @@
 /**
  * Plugin Name: One Icon for WP
  * Description: A plugin for icons all over WordPress and WooCommerce
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Cross Media Cloud
  * Author URI:  https://www.cross-media-cloud.de
  * License:     GNU General Public License v2 or later
