@@ -5,3 +5,8 @@
 .one-icon-for-wp-single-icon-block {
 	pointer-events:   none;
 }
+
+.one-icon-for-wp-single-icon-block svg,
+.one-icon-for-wp-single-icon-block svg path {
+	fill: currentColor;
+}

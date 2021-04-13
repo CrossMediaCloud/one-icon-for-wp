@@ -6,6 +6,7 @@
 	padding: 5px 10px;
 }
 
-.one-icon-for-wp-single-icon-block svg {
+.one-icon-for-wp-single-icon-block svg,
+.one-icon-for-wp-single-icon-block svg path {
 	fill: currentColor;
 }
