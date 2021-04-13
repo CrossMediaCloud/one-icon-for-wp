@@ -10,15 +10,47 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 	 */
 	public function __construct() {
 
-		if ( is_admin() ) {
+		if ( ! is_admin() ) {
+			return;
+		}
 
-			add_action( 'kategorie_add_form_fields', array( $this, 'create_screen_fields' ), 10, 1 );
-			add_action( 'kategorie_edit_form_fields', array( $this, 'edit_screen_fields' ), 10, 2 );
+		add_action( 'one_icon_for_wp_taxonomies_with_term_icon', array( __CLASS__, 'add_icons_to_taxonomies' ) );
 
-			add_action( 'created_kategorie', array( $this, 'save_data' ), 10, 1 );
-			add_action( 'edited_kategorie', array( $this, 'save_data' ), 10, 1 );
+		// Get taxonomies to add term icons to
+		$taxonomies = apply_filters( 'one_icon_for_wp_taxonomies_with_term_icon', array() );
+		// Check value
+		if ( ! is_array( $taxonomies ) ) {
+			return;
+		}
+		//  Loop taxonomies
+		foreach ( $taxonomies as $taxonomy ) {
+
+			// Sanitize value
+			$taxonomy = sanitize_title( $taxonomy );
+
+			add_action( $taxonomy . '_add_form_fields', array( $this, 'create_screen_fields' ), 10, 1 );
+			add_action( $taxonomy . '_edit_form_fields', array( $this, 'edit_screen_fields' ), 10, 2 );
+
+			add_action( 'created_' . $taxonomy, array( $this, 'save_data' ), 10, 1 );
+			add_action( 'edited_' . $taxonomy, array( $this, 'save_data' ), 10, 1 );
 
 		}
+
+	}
+
+	/**
+	 * @param array $taxonomies
+	 *
+	 * @return array
+	 */
+	public static function add_icons_to_taxonomies( array $taxonomies ): array {
+
+		return array_merge( $taxonomies, array(
+			'category',
+			'post_tag',
+			'product_cat',
+			'product_tag',
+		) );
 
 	}
 
