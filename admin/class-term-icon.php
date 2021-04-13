@@ -30,16 +30,22 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 		// Set default values.
 		$term_icon = '';
 
-		// Form fields.
-		echo '<div class="form-field term-one-icon-for-wp-term-icon-wrap">';
-		echo '	<label for="one_icon_for_wp_term_icon">' . __( 'Term Icon', 'one-icon-for-wp' ) . '</label>';
-		echo '	<select id="one_icon_for_wp_term_icon" name="one_icon_for_wp_term_icon">';
-		echo '		<option value="value" ' . selected( $term_icon, 'value', false ) . '> ' . __( 'label', 'one-icon-for-wp' ) . '</option>';
-		echo '	</select>';
-		echo '	<p class="description">' . __( 'Select an icon to represent the term', 'one-icon-for-wp' ) . '</p>';
-		echo '</div>';
+		// Form fields. ?>
+		<div class="form-field term-one-icon-for-wp-term-icon-wrap">
+			<label for="term-icon">
+				<?php _e( 'Term Icon', 'one-icon-for-wp' ); ?>
+			</label>
+			<select id="term-icon" name="term-icon">
+				<option value="value" <?php selected( $term_icon, 'value', false ); ?>>
+					<?php _e( 'Label', 'one-icon-for-wp' ); ?>
+				</option>
+			</select>
+			<p class="description">
+				<?php _e( 'Select an icon to represent the term', 'one-icon-for-wp' ); ?>
+			</p>
+		</div>
 
-	}
+	<?php }
 
 	/**
 	 * @param $term
@@ -48,22 +54,22 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 	public function edit_screen_fields( $term, $taxonomy ) {
 
 		// Retrieve an existing value from the database.
-		$term_icon = get_term_meta( $term->term_id, 'one_icon_for_wp_term_icon', true );
+		$term_icon = get_term_meta( $term->term_id, 'term-icon', true );
 
 		// Set default values.
 		if ( empty( $term_icon ) ) {
 			$term_icon = '';
 		}
 
-		// Form fields.?>
+		// Form fields. ?>
 		<tr class="form-field term-one-icon-for-wp-term-icon-wrap">
 			<th scope="row">
-				<label for="one_icon_for_wp_term_icon">
+				<label for="term-icon">
 					<?php _e( 'Term Icon', 'one-icon-for-wp' ); ?>
 				</label>
 			</th>
 			<td>
-				<select id="one_icon_for_wp_term_icon" name="one_icon_for_wp_term_icon">
+				<select id="term-icon" name="term-icon">
 					<option value="" <?php selected( $term_icon, 'value', true ); ?>>
 						<?php _e( '-- None --', 'one-icon-for-wp' ); ?>
 					</option>
@@ -85,10 +91,10 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 	public function save_data( $term_id ) {
 
 		// Sanitize user input.
-		$term_icon = isset( $_POST['one_icon_for_wp_term_icon'] ) ? $_POST['one_icon_for_wp_term_icon'] : '';
+		$term_icon = isset( $_POST['term-icon'] ) ? $_POST['term-icon'] : '';
 
 		// Update the meta field in the database.
-		update_term_meta( $term_id, 'one_icon_for_wp_term_icon', $term_icon );
+		update_term_meta( $term_id, 'term-icon', $term_icon );
 
 	}
 
