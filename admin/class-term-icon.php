@@ -57,6 +57,43 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 
 	}
 
+	/	 **
+	 * Helper to render form label.
+	 */
+	private function render_label() { ?>
+		<label for="term-icon">
+			<?php esc_html_e( 'Term Icon', 'one-icon-for-wp' ); ?>
+		</label>
+	<?php }
+
+	/**
+	 * Helper to render icon form field.
+	 *
+	 * @param string $term_icon
+	 */
+	private function render_icon_select( string $term_icon ) { ?>
+		<select id="term-icon" name="term-icon">
+			<option value="" <?php selected( $term_icon, '', true ); ?>>
+				<?php esc_attr_e( '-- None --', 'one-icon-for-wp' ); ?>
+			</option>
+			<?php
+			foreach ( apply_filters( 'one-icon-for-wp-icon-list', array() ) as $icon ) { ?>
+				<option value="<?php echo esc_attr( $icon['value'] ); ?>" <?php selected( $term_icon, $icon['value'], true ); ?>>
+					<?php echo esc_html( $icon['label'] ); ?>
+				</option>
+			<?php } ?>
+		</select>
+	<?php }
+
+	/**
+	 * Helper to render description.
+	 */
+	private function render_icon_description() { ?>
+		<p class="description">
+			<?php _e( 'Select an icon to represent the term.', 'one-icon-for-wp' ); ?>
+		</p>
+	<?php }
+
 	/**
 	 * Add term icon setting to new term screen.
 	 *
@@ -69,17 +106,15 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 
 		// Form fields. ?>
 		<div class="form-field term-one-icon-for-wp-term-icon-wrap">
-			<label for="term-icon">
-				<?php _e( 'Term Icon', 'one-icon-for-wp' ); ?>
-			</label>
-			<select id="term-icon" name="term-icon">
-				<option value="value" <?php selected( $term_icon, 'value', false ); ?>>
-					<?php _e( 'Label', 'one-icon-for-wp' ); ?>
-				</option>
-			</select>
-			<p class="description">
-				<?php _e( 'Select an icon to represent the term', 'one-icon-for-wp' ); ?>
-			</p>
+			<?php
+			// Display label
+			$this->render_label();
+			// Display tge select form field
+			$this->render_icon_select( $term_icon );
+			// Display a description
+			$this->render_icon_description();
+			?>
+
 		</div>
 
 	<?php }
@@ -103,22 +138,18 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 		// Form fields. ?>
 		<tr class="form-field term-one-icon-for-wp-term-icon-wrap">
 			<th scope="row">
-				<label for="term-icon">
-					<?php _e( 'Term Icon', 'one-icon-for-wp' ); ?>
-				</label>
+				<?php
+				// Display label
+				$this->render_label();
+				?>
 			</th>
 			<td>
-				<select id="term-icon" name="term-icon">
-					<option value="" <?php selected( $term_icon, 'value', true ); ?>>
-						<?php _e( '-- None --', 'one-icon-for-wp' ); ?>
-					</option>
-					<option value="value" <?php selected( $term_icon, 'value', true ); ?>>
-						<?php _e( 'Label', 'one-icon-for-wp' ); ?>
-					</option>
-				</select>
-				<p class="description">';
-					<?php _e( 'Select an icon to represent the term.', 'one-icon-for-wp' ); ?>
-				</p>
+				<?php
+				// Display tge select form field
+				$this->render_icon_select( $term_icon );
+				// Display a description
+				$this->render_icon_description();
+				?>
 			</td>
 		</tr>
 
