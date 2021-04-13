@@ -57,7 +57,7 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 
 	}
 
-	/	 **
+	/**
 	 * Helper to render form label.
 	 */
 	private function render_label() { ?>
