@@ -61,3 +61,9 @@ require_once 'includes/icons.php';
  */
 // Blocks
 require_once 'blocks/blocks.php';
+
+if ( ! is_admin() ) {
+	return;
+}
+
+require_once 'admin/class-term-icon.php';
