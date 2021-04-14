@@ -825,6 +825,7 @@ class ONE_ICON_FOR_WP_ICONS {
 			'grip-vertical'                       => __( 'Grip Vertical', 'one-icon-for-wp' ),
 			'h-square'                            => __( 'H Square', 'one-icon-for-wp' ),
 			'hammer'                              => __( 'Hammer', 'one-icon-for-wp' ),
+			'hard-hat'                            => __( 'Hard Hat', 'one-icon-for-wp' ),
 			'hamsa'                               => __( 'Hamsa', 'one-icon-for-wp' ),
 			'hand-holding'                        => __( 'Hand Holding', 'one-icon-for-wp' ),
 			'hand-holding-heart'                  => __( 'Hand Holding Heart', 'one-icon-for-wp' ),
