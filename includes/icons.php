@@ -1243,6 +1243,7 @@ class ONE_ICON_FOR_WP_ICONS {
 			'tv'                                  => __( 'Television', 'one-icon-for-wp' ),
 			'umbrella'                            => __( 'Umbrella', 'one-icon-for-wp' ),
 			'umbrella-beach'                      => __( 'Umbrella Beach', 'one-icon-for-wp' ),
+			'uncharted'                           => __( 'Uncharted', 'one-icon-for-wp' ),
 			'underline'                           => __( 'Underline', 'one-icon-for-wp' ),
 			'undo'                                => __( 'Undo', 'one-icon-for-wp' ),
 			'undo-alt'                            => __( 'Alternate Undo', 'one-icon-for-wp' ),
