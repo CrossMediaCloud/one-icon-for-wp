@@ -41,3 +41,6 @@ function one_icon_for_wp_display_icon( string $icon_name ): void {
 	do_action( 'one_icon_for_wp_missing_icon_to_display', $icon_name );
 
 }
+
+//  Make public helper also work via action call
+add_action( 'one_icon_for_wp_display_icon', 'one_icon_for_wp_display_icon', 20, 1 );
