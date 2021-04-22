@@ -16,17 +16,21 @@ function one_icon_for_wp_single_icon_shortcode( array $atts ) {
 		$atts
 	);
 
-	if ( ! empty( $atts['style'] ) ) {
-		echo '<div style="' . $atts['style'] . '">';
-	}
+	// Allow overwriting te icon max width
+	$max_width = apply_filters( 'one_icon_for_wp_shortcode_icon_max_width', 100 );
 
-	// Display the icon
-	do_action( 'one_icon_for_wp_display_icon', $atts['icon'] );
+	ob_start();
+	?>
+	<div style="max-width: <?php echo (int) $max_width; ?>px; <?php echo $atts['style']; ?>">
+		<?php
+		// Display the icon
+		do_action( 'one_icon_for_wp_display_icon', $atts['icon'] );
+		?>
+	</div>
 
-	if ( ! empty( $atts['style'] ) ) {
-		echo '</div>';
-	}
-
+	<?php
+	// Return the markup
+	return ob_get_clean();
 }
 
 // Add single icon shortcode
