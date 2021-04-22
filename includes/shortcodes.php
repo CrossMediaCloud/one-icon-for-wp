@@ -1,47 +1,33 @@
 <?php
 
-/*
- * Add shortcode
+/**
+ * Single icon shortcode.
+ *
+ * @param array $atts
  */
+function one_icon_for_wp_single_icon_shortcode( array $atts ) {
 
-class ONE_ICON_FOR_WP_SHORTCODES {
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'icon'  => 'font-awesome/brands/font-awesome-flag',
+			'style' => '',
+		),
+		$atts
+	);
 
-	public function __construct() {
-
-		// Add single icon shortcode
-		add_shortcode( 'icon', array( $this, 'single_icon' ) );
-
+	if ( ! empty( $atts['style'] ) ) {
+		echo '<div style="' . $atts['style'] . '">';
 	}
 
-	/**
-	 * Single icon.
-	 *
-	 * @param array $atts
-	 */
-	public function single_icon( array $atts ) {
+	// Display the icon
+	do_action( 'one_icon_for_wp_display_icon', $atts['icon'] );
 
-		// Attributes
-		$atts = shortcode_atts(
-			array(
-				'icon' => 'font-awesome/brands/font-awesome-flag',
-				'style' => '',
-			),
-			$atts
-		);
-
-		if ( ! empty( $atts['style'] ) ) {
-			echo '<div style="' . $atts['style'] . '">';
-		}
-
-		// Display the icon
-		do_action( 'one_icon_for_wp_display_icon', $atts['icon'] );
-
-		if ( ! empty( $atts['style'] ) ) {
-			echo '</div>';
-		}
-
+	if ( ! empty( $atts['style'] ) ) {
+		echo '</div>';
 	}
 
 }
 
-new  ONE_ICON_FOR_WP_SHORTCODES();
+// Add single icon shortcode
+add_shortcode( 'icon', 'one_icon_for_wp_single_icon_shortcode' );
