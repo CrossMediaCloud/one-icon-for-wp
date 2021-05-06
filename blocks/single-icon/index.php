@@ -45,7 +45,7 @@ function one_icon_for_wp_single_icon_block_init() {
 	);
 
 	// Add data to editor
-	wp_localize_script( 'one-icon-for-wp-single-icon-block-editor', 'one_icon_for_wp_icon_list', apply_filters( 'one-icon-for-wp-icon-list', array() ) );
+	wp_localize_script( 'one-icon-for-wp-single-icon-block-editor', 'one_icon_for_wp_icon_list', apply_filters( 'one_icon_for_wp_icon_list', array() ) );
 
 	/*
 	 * Add editor style

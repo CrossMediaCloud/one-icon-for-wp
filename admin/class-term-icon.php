@@ -77,7 +77,7 @@ class ONE_ICON_FOR_WP_TERM_ICON {
 				<?php esc_attr_e( '-- None --', 'one-icon-for-wp' ); ?>
 			</option>
 			<?php
-			foreach ( apply_filters( 'one-icon-for-wp-icon-list', array() ) as $icon ) { ?>
+			foreach ( apply_filters( 'one_icon_for_wp_icon_list', array() ) as $icon ) { ?>
 				<option value="<?php echo esc_attr( $icon['value'] ); ?>" <?php selected( $term_icon, $icon['value'], true ); ?>>
 					<?php echo esc_html( $icon['label'] ); ?>
 				</option>

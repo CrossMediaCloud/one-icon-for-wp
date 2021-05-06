@@ -13,7 +13,7 @@ class ONE_ICON_FOR_WP_ICONS {
 	 */
 	function __construct() {
 		// Add own icons to icon list
-		add_filter( 'one-icon-for-wp-icon-list', array( __CLASS__, 'add_font_awesome' ) );
+		add_filter( 'one_icon_for_wp_icon_list', array( __CLASS__, 'add_font_awesome' ) );
 	}
 
 	/**
