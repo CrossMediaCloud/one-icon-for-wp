@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: One Icon for WP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-09 17:43+0000\n"
-"PO-Revision-Date: 2021-04-09 17:44+0000\n"
+"PO-Revision-Date: 2021-05-12 06:08+0000\n"
 "Last-Translator: Ralf Wiechers\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -14,6 +14,10 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.5.2; wp-5.7\n"
 "X-Domain: one-icon-for-wp"
+
+#: admin/class-term-icon.php:77
+msgid "-- None --"
+msgstr ""
 
 #. Description of the plugin
 msgid "A plugin for icons all over WordPress and WooCommerce"
@@ -30,3 +34,11 @@ msgstr "https://www.cross-media-cloud.de"
 #. Name of the plugin
 msgid "One Icon for WP"
 msgstr "One Icon for WP"
+
+#: admin/class-term-icon.php:93
+msgid "Select an icon to represent the term."
+msgstr "Wähle ein Icon um die Information zu repräsentieren."
+
+#: admin/class-term-icon.php:65
+msgid "Term Icon"
+msgstr "Icon"
