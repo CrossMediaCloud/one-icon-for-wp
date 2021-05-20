@@ -3,14 +3,13 @@
  */
 
 .one-icon-for-wp-single-icon-block {
-	pointer-events:   none;
+	pointer-events: none;
 }
 
 .one-icon-for-wp-single-icon-block svg,
 .one-icon-for-wp-single-icon-block svg path {
 	fill: currentColor;
 }
-
 
 .one-icon-for-wp-single-icon-block svg {
 	max-width:  50px;
